@@ -5,7 +5,7 @@ display_name_en: Learning Docs Site Builder
 description: 生成「项目代码 × 官方文档」结合的 VitePress 中文学习站。仅当用户明确要求搭建/生成学习文档站、技术笔记站、文档站点，或要求把官方文档与项目源码对照成学习材料时使用。不用于生成 API 参考手册，也不修改业务代码。
 description_zh: 为任意技术栈/框架/语言/中间件生成「项目代码 × 官方文档」结合的 VitePress 中文学习站：Mermaid 心智模型图、分组可折叠侧栏、项目核心代码块（标注出处与结论）、工程实践、自测题与官方链接，附一键启动脚本。
 description_en: Generate a local VitePress study site that pairs a project's source code with official documentation — Mermaid mental-model diagrams, grouped sidebar, annotated core code snippets, engineering practices, self-tests, official links, and a one-click launcher.
-version: 1.0.0
+version: 1.0.1
 author: gelijie
 license: MIT
 examples_zh:
