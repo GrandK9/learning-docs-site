@@ -288,6 +288,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 | 构建报 `Error parsing JavaScript expression: Unexpected token` | 站点正文出现字面双花括号（模板占位符语法）会被 Vue 当插值解析，**代码块与行内代码同样逃不掉**。需要讲占位符时改用 `<占位符名>`，并在正文说明「模板中以双花括号包裹」。`<div v-pre>` 包不住 Markdown 代码块，且会阻断 markdown 解析 |
 | Mermaid 空白/乱码/只显示源码 | SSR 会压扁 `div.mermaid` 换行 → 必须用 `data-mermaid-b64` 占位 + 客户端解码；渲染钩子用 **`onContentUpdated`**（仅 `onMounted` 太早） |
 | Mermaid 插件 | **勿用** `vitepress-plugin-mermaid`（Windows dev 白屏）；用模板内 `mermaid-init.ts` |
+| 切到深色后图里文字仍是深色、看不清 | `mermaid.initialize` 只在首次调用时固定主题，切主题不会触发 `onContentUpdated`。必须 `watch(isDark)` → 重新 `initialize` 并按新主题重渲染；重渲染前要把 svg 还原成源码（模板 `mermaid-init.ts` 用 `data-mermaid-src` 保存原文）。只改 CSS 不够：图内配色由 mermaid 生成的 `<style>` 决定 |
 | 双击 bat 后浏览器白屏 | ① 勿用 `vitepress-plugin-mermaid`；② bat 为 build+preview，等 `[BUILD]` 完成后再由 `wait-and-open.ps1` 开浏览器；③ 仍白则 F5 |
 | 构建后 `curl` 看着图表是空的 | 图表客户端渲染，HTML 里 `<div class="mermaid">` 本来就是空壳，要用浏览器或无头浏览器验证 |
 | 侧栏链接 404 | `sidebar` 的 `link` 写成 `/主题slug/文件名`，不带 `.md`、不带 `.html` |

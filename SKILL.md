@@ -189,6 +189,7 @@ msedge --headless=new --dump-dom http://127.0.0.1:5173/<页面路径> | grep -c 
 - 图的目标是**建立心智模型**（例：「索引 = N 个 Lucene 实例」「Filter 链在 DispatcherServlet 之前」「虚拟 DOM diff 的输入输出」），不是把官方教程的 API 调用逐步抄进图里。
 - 图下用一句话给出**结论**，说明该图要建立的判断。
 - 节点标签里用 `<br/>` 换行是安全的；不要用 `()` 或 `[]` 包裹正文，会被当成形状语法。
+- 图表配色由 mermaid 生成的 `<style>` 决定，**不受站点 CSS 控制**。深/浅色切换必须重新初始化并重渲染（模板 `mermaid-init.ts` 已实现，勿删 `watch(isDark)` 与 `data-mermaid-src`）。
 
 ## 代码块规范（项目对照）
 
