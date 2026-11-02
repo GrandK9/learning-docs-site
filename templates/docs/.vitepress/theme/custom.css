@@ -1,0 +1,90 @@
+/* 首页卡片网格：替代 MkDocs Material 的 grid cards */
+
+.wb-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.wb-card {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+  padding: 16px 18px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.wb-card:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.wb-card__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.wb-card__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+}
+
+.wb-card__title {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.wb-card__body > :first-child {
+  margin-top: 0;
+}
+
+.wb-card__body > :last-child {
+  margin-bottom: 0;
+}
+
+.wb-card__body p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--vp-c-text-2);
+  margin: 0;
+}
+
+/* 密集表格在窄屏下允许横向滚动 */
+.vp-doc table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.vp-doc table th,
+.vp-doc table td {
+  white-space: normal;
+  min-width: 84px;
+}
+
+.vp-doc .mermaid {
+  margin: 1.25rem 0;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.vp-doc .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.vp-doc .vp-mermaid:empty {
+  min-height: 48px;
+}

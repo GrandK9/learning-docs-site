@@ -1,0 +1,11 @@
+# 统一换行：仓库内文本用 LF，Windows 可执行脚本保持 CRLF
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.psm1 text eol=crlf
+
+# 仓库自身元文件不打进发行包
+/.gitignore    export-ignore
+/.gitattributes export-ignore
+

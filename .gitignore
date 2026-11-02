@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+*.zip
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# 本地打包脚本，不进仓库
+/package.ps1
